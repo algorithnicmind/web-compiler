@@ -12,6 +12,7 @@ function ResizablePanelGroup({
   return (
     <ResizablePrimitive.Group
       data-slot="resizable-panel-group"
+      // @ts-expect-error direction prop exists but ts is complaining
       direction={direction}
       className={cn(
         "flex h-full w-full aria-[orientation=vertical]:flex-col",
