@@ -34,11 +34,47 @@ export default function IDEPage() {
   const handleRunCode = async () => {
     setIsRunning(true);
     setOutput("Executing code...\n");
-    // Mock execution for now
-    setTimeout(() => {
-      setOutput(`Output for ${language} execution:\n\nSuccess! Your mock code executed properly.\n\nInput provided:\n${input}`);
+    
+    try {
+      const response = await fetch("/api/execute", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          language,
+          sourceCode: code,
+          stdin: input,
+        }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        setOutput(`Error: ${data.error || "Execution failed"}`);
+      } else {
+        // Construct the output string dynamically
+        let finalOutput = `Status: ${data.status}\n\n`;
+        if (data.compile_output) {
+          finalOutput += `Compiler Output:\n${data.compile_output}\n\n`;
+        }
+        if (data.stderr) {
+          finalOutput += `Standard Error:\n${data.stderr}\n\n`;
+        }
+        if (data.stdout) {
+          finalOutput += `Standard Output:\n${data.stdout}`;
+        }
+        if (!data.stdout && !data.stderr && !data.compile_output) {
+          finalOutput += "No output was returned.";
+        }
+        setOutput(finalOutput);
+      }
+    } catch (err) {
+      console.error(err);
+      setOutput("Network Error: Could not connect to execution server.");
+    } finally {
       setIsRunning(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -51,7 +87,7 @@ export default function IDEPage() {
             <span className="font-bold hidden sm:inline-block">CodeStudio</span>
           </Link>
           <div className="h-4 w-[1px] bg-border mx-2" />
-          <Select value={language} onValueChange={setLanguage}>
+          <Select value={language} onValueChange={(val) => setLanguage(val || "")}>
             <SelectTrigger className="w-[150px] h-8 text-xs">
               <SelectValue placeholder="Language" />
             </SelectTrigger>
