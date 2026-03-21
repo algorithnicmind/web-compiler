@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/NextJS-Dark.svg" alt="Next.js" width="80" height="80" />
+  <h1>⚡ CodeStudio IDE</h1>
+  <p><strong>A Modern, Web-Based Multi-Language Coding Platform</strong></p>
+  
+  <p>
+    <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    <img alt="Built with Next.js" src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" />
+  </p>
+</div>
 
-## Getting Started
+---
 
-First, run the development server:
+## 🌟 Overview
+**CodeStudio** is a state-of-the-art, high-performance web-based Integrated Development Environment (IDE) engineered to empower developers. Built from the ground up with **Next.js**, **Tailwind CSS**, and **Monaco Editor**, it provides a seamless, uncompromised coding experience—allowing you to write, compile, and execute code across multiple languages instantly in your browser via the **Judge0 API**.
+
+## ✨ Features
+- 🚀 **Multi-Language Support**: Seamlessly switch between popular languages including Python, JavaScript, TypeScript, C++, and Java.
+- 🎨 **Sleek & Modern Interface**: A highly responsive, dark-mode-first aesthetic inspired by industry-leading IDEs to keep you focused.
+- 📝 **Powerful Code Editing**: Integrated **Monaco Editor** delivers advanced features like syntax highlighting, auto-completion, and intelligent formatting—bringing the VS Code experience to the web.
+- ⚡ **Instant Execution**: Backed by the robust Judge0 execution engine for lightning-fast compilation and output feedback.
+- 📱 **Fully Responsive**: Optimized to provide a stellar coding experience on desktops, tablets, and mobile devices.
+
+## 🛠️ Tech Stack
+- **Framework:** Next.js (App Router), React
+- **Styling:** Tailwind CSS
+- **Core Editor:** `@monaco-editor/react`
+- **Compiler API:** Judge0 (RapidAPI)
+- **Icons & UI:** Lucide React
+
+## 🚀 Quick Start
+
+### 1. Requirements
+Ensure you have Node.js (v18+) and npm installed on your system.
+
+### 2. Installation
+Clone the project and install all required dependencies:
+
+```bash
+git clone https://github.com/your-username/web-compiler.git
+cd web-compiler
+npm install
+```
+
+### 3. Environment Variables
+To allow code execution, create a `.env.local` file in the root of the project and add your Judge0 API key:
+
+```env
+NEXT_PUBLIC_JUDGE0_API_KEY=your_rapidapi_key_here
+```
+
+### 4. Running Locally
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to start coding!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Sneak Peek
+*(Add a screenshot of your beautiful UI here!)*
 
-## Learn More
+## 🤝 Contributing
+Contributions, issues, and feature requests are highly welcome! We'd love to have your help in making CodeStudio even better. 
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+<div align="center">
+  <i>Start typing, start building. The world is your compiler.</i>
+</div>
