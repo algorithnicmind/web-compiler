@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { Code2, Play, LayoutTemplate, Settings, FolderOpen, Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,12 +24,45 @@ const SUPPORTED_LANGUAGES = [
   { id: "cpp", name: "C++" },
 ];
 
+const getDefaultCode = (langName: string) => {
+  switch (langName) {
+    case "javascript":
+      return 'console.log("Hello, World!");';
+    case "typescript":
+      return 'const greeting: string = "Hello, TypeScript!";\nconsole.log(greeting);';
+    case "python":
+      return 'print("Hello, Python!")';
+    case "java":
+      return 'public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, Java!");\n    }\n}';
+    case "cpp":
+      return '#include <iostream>\n\nint main() {\n    std::cout << "Hello, C++!" << std::endl;\n    return 0;\n}';
+    default:
+      return "// Write your code here";
+  }
+};
+
 export default function IDEPage() {
   const [language, setLanguage] = useState("javascript");
-  const [code, setCode] = useState("// Write your code here");
+  const [code, setCode] = useState(() => getDefaultCode("javascript"));
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [isRunning, setIsRunning] = useState(false);
+
+  // Load saved code for the selected language
+  useEffect(() => {
+    const savedCode = localStorage.getItem(`codeStudio_code_${language}`);
+    if (savedCode) {
+      setCode(savedCode);
+    } else {
+      setCode(getDefaultCode(language));
+    }
+  }, [language]);
+
+  const handleCodeChange = (val: string | undefined) => {
+    const newCode = val || "";
+    setCode(newCode);
+    localStorage.setItem(`codeStudio_code_${language}`, newCode);
+  };
 
   const handleRunCode = async () => {
     setIsRunning(true);
@@ -151,7 +184,7 @@ export default function IDEPage() {
                     language={language}
                     theme="vs-dark"
                     value={code}
-                    onChange={(val) => setCode(val || "")}
+                    onChange={handleCodeChange}
                     options={{
                       minimap: { enabled: false },
                       fontSize: 14,
