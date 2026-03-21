@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: "CodeStudio IDE",
+  title: "Anti-Debugger IDE",
   description: "A web-based multi-language coding platform with a clean, VS Code-inspired interface.",
 };
 

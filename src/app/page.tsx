@@ -9,7 +9,7 @@ export default function Home() {
       <header className="px-6 lg:px-8 h-16 flex items-center border-b border-border/40 backdrop-blur-sm sticky top-0 z-50">
         <Link className="flex items-center justify-center gap-2" href="#">
           <Code2 className="h-6 w-6 text-primary" />
-          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">CodeStudio</span>
+          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">Anti-Debugger</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
           <Link className="text-sm font-medium hover:text-primary transition-colors" href="#features">
@@ -86,7 +86,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border/40">
         <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} CodeStudio. All rights reserved.
+          &copy; {new Date().getFullYear()} Anti-Debugger. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4 text-muted-foreground" href="#">

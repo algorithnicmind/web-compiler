@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/NextJS-Dark.svg" alt="Next.js" width="80" height="80" />
-  <h1>⚡ CodeStudio IDE</h1>
+  <h1>⚡ Anti-Debugger IDE</h1>
   <p><strong>A Modern, Web-Based Multi-Language Coding Platform</strong></p>
   
   <p>
@@ -13,7 +13,7 @@
 ---
 
 ## 🌟 Overview
-**CodeStudio** is a state-of-the-art, high-performance web-based Integrated Development Environment (IDE) engineered to empower developers. Built from the ground up with **Next.js**, **Tailwind CSS**, and **Monaco Editor**, it provides a seamless, uncompromised coding experience—allowing you to write, compile, and execute code across multiple languages instantly in your browser via the **Judge0 API**.
+**Anti-Debugger** is a state-of-the-art, high-performance web-based Integrated Development Environment (IDE) engineered to empower developers. Built from the ground up with **Next.js**, **Tailwind CSS**, and **Monaco Editor**, it provides a seamless, uncompromised coding experience—allowing you to write, compile, and execute code across multiple languages instantly in your browser via the **Judge0 API**.
 
 ## ✨ Features
 - 🚀 **Multi-Language Support**: Seamlessly switch between popular languages including Python, JavaScript, TypeScript, C++, and Java.
@@ -65,7 +65,7 @@ Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 *(Add a screenshot of your beautiful UI here!)*
 
 ## 🤝 Contributing
-Contributions, issues, and feature requests are highly welcome! We'd love to have your help in making CodeStudio even better. 
+Contributions, issues, and feature requests are highly welcome! We'd love to have your help in making Anti-Debugger even better. 
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.

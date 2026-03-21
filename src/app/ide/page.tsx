@@ -50,7 +50,7 @@ export default function IDEPage() {
 
   // Load saved code for the selected language
   useEffect(() => {
-    const savedCode = localStorage.getItem(`codeStudio_code_${language}`);
+    const savedCode = localStorage.getItem(`antiDebugger_code_${language}`);
     if (savedCode) {
       setCode(savedCode);
     } else {
@@ -61,7 +61,7 @@ export default function IDEPage() {
   const handleCodeChange = (val: string | undefined) => {
     const newCode = val || "";
     setCode(newCode);
-    localStorage.setItem(`codeStudio_code_${language}`, newCode);
+    localStorage.setItem(`antiDebugger_code_${language}`, newCode);
   };
 
   const handleRunCode = async () => {
@@ -117,7 +117,7 @@ export default function IDEPage() {
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
             <Code2 className="h-5 w-5" />
-            <span className="font-bold hidden sm:inline-block">CodeStudio</span>
+            <span className="font-bold hidden sm:inline-block">Anti-Debugger</span>
           </Link>
           <div className="h-4 w-[1px] bg-border mx-2" />
           <Select value={language} onValueChange={(val) => setLanguage(val || "")}>
