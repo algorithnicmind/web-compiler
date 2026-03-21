@@ -38,8 +38,8 @@ Ensure you have Node.js (v18+) and npm installed on your system.
 Clone the project and install all required dependencies:
 
 ```bash
-git clone https://github.com/your-username/web-compiler.git
-cd web-compiler
+git clone https://github.com/your-username/anti-debugger.git
+cd anti-debugger
 npm install
 ```
 
